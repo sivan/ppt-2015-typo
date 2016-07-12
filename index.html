@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>做好中文排版 —— Sivan</title>
+<meta name="author" content="Sivan">
+<link rel="stylesheet" href="css/reveal.css">
+<link rel="stylesheet" href="css/theme/serif-cn.css" id="theme">
+<link rel="stylesheet" href="lib/css/zenburn.css">
+<link rel="icon" href="http://lightcss.com/favicon-48.png" sizes="48x48" type="image/png">
+<link rel="icon" href="http://lightcss.com/favicon-192.png" sizes="192x192" type="image/png">
+<script>
+	var link = document.createElement( 'link' );
+	link.rel = 'stylesheet';
+	link.type = 'text/css';
+	link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+	document.getElementsByTagName( 'head' )[0].appendChild( link );
+</script>
+</head>
+<body>
+<div class="reveal">
+	<div class="slides">
+
+	<!-- ~Here we go~  -->
+	<section>
+		<h1>做好中文排版</h1>
+		<p class="serif">Sivan Sun ♥ Front-End</p>
+		<p class="serif"><small><a href="http://lightcss.com/">Blog</a> / <a href="https://github.com/sivan">GitHub</a> / <a href="http://weibo.com/sivan">Weibo</a></small></p>
+	</section>
+
+	<section>
+		<section data-markdown><script type="text/template">
+# 从《中文排版需求》说起
+		</script></section>
+
+		<section data-markdown><script type="text/template">
+* [《W3C 中文排版需求》](https://www.w3.org/TR/clreq/)的[由来](http://www.typeisbeautiful.com/2015/04/9171/)
+* W3C i18n（Internationalization）
+		</script></section>
+	</section>
+
+	<section>
+		<section data-markdown><script type="text/template">
+# 《中文排版需求》摘要
+		</script></section>
+
+		<section data-markdown><script type="text/template">
+![](images/justify.jpg)
+
+原则上中文排版使用的汉字与标点比例皆为 1:1 正方形，并将其无缝隙并列排成版面
+		</script></section>
+
+		<section data-markdown><script type="text/template">
+## <small>[&sect;](#/2/2 "固定链接")</small> 中文排版常用字体 <small>[&hArr;](#/3/2 "解决方案")</small>
+
+宋体、黑体、楷体和仿宋体。
+		</script></section>
+
+		<section data-markdown><script type="text/template">
+### 宋体 SimSun ☞ Serif
+主要用于内文文字、标题与注释，用于标题时需加字重。
+```css
+body { font-family: serif; }
+```
+![「宋」体](images/song.jpg)
+		</script></section>
+
+		<section data-markdown><script type="text/template">
+### 宋体 SimSun ☞ Serif
+主要用于内文文字、标题与注释，用于标题时需加字重。
+```css
+body { font-family: serif; }
+```
+![宋体](images/songti.jpg)
+		</script></section>
+
+		<section data-markdown><script type="text/template">
+### 黑体 Heiti ☞ Sans-Serif
+主要用于标题、人名等，也会加字重用于内文表示强调。
+```css
+body { font-family: sans-serif; }
+```
+![黑体](images/hei.jpg)
+		</script></section>
+
+		<section data-markdown><script type="text/template">
+### 楷体 Kaiti ☞☜ Cursive?
+主要用于标题、引用、对话、内容等。
+```css
+body { font-family: "楷体", "楷体_GB2312", KaiTi, Kaiti SC, BiauKai, serif; }
+```
+![楷体](images/kai.jpg)
+		</script></section>
+
+		<section data-markdown><script type="text/template">
+### 仿宋体 ☞☜ Serif ?
+用于引用、摘录等段落。
+```css
+body { font-family: STFangsong, FangSong, serif; }
+```
+![楷体](images/fangsong.jpg)
+		</script></section>
+
+		<section data-markdown><script type="text/template">
+## <small>[&sect;](#/2/8 "固定链接")</small> 横排与竖排 <small>[&hArr;](#/3/5 "解决方案")</small>
+* 竖排文字；
+* 横排文字；
+* 中西文混排。
+		</script></section>
+
+		<section data-markdown><script type="text/template">
+## <small>[&sect;](#/2/9 "固定链接")</small> 标点符号
+
+* 点号：全角逗号、句号与顿号等；
+* 标号（前后标号）：
+	* 引号简体先双后单，繁体先单后双等；
+	* 括号简体「（」，繁体允许「（」也允许占两个汉字空间的「——」（em dash）或连续两个「-」；
+	* 书名号：简体永远用「《」，除非嵌套用「&lt;」，台湾书名用「《」，章节用「&lt;」，也可用底部波浪线「﹏」；
+		</script></section>
+
+		<section data-markdown><script type="text/template">
+* 标号（连接标号）：
+	* 破折号：占两个汉字空间的「——」（em dash）；
+	* 省略号使用占两个汉字空间的「……」；
+	* 连接号：简体有「-」、「—」和「\~」三种，繁体支持前两种；
+	* 间隔号「·」，繁体永远占一个汉字大小，简体可根据情况占半个；
+		</script></section>
+
+		<section data-markdown><script type="text/template">
+* 标号（已废弃或仅存于古书中）：
+	* 着重号：文字底部点「•」；
+	* 专名号：底部「＿」标识人名、地名等；
+	* 分隔号：「/」或「／」。
+* Link：[中文标点符号表](https://www.w3.org/TR/clreq/#tables_of_chinese_punctuation_marks)
+		</script></section>
+
+		<section data-markdown><script type="text/template">
+## <small>[&sect;](#/2/12 "固定链接")</small> 行首行尾禁则 <small>[&hArr;](#/3/6  "解决方案")</small>
+
+> 禁则处理：不允许句号、逗号等出现在行首，英文单词不可截断。
+
+* 所有点号、结束引号、结束括号、结束书名号等不得出于行首；
+* 开始引号、开始括号、开始书名号不得出现于行尾。
+		</script></section>
+
+		<section data-markdown><script type="text/template">
+## <small>[&sect;](#/2/13 "固定链接")</small> 中西文混排 <small>[&hArr;](#/3/8 "解决方案")</small>
+
+* 正文是中文，标点也应遵守中文标点用法；
+* 原则上汉字与英文字母、数字间使用 1/4 汉字宽空白作为间距，英文出现在行首或行尾时无需加入空白。
+		</script></section>
+
+		<section data-markdown><script type="text/template">
+## <small>[&sect;](#/2/14 "固定链接")</small> 段落 <small>[&hArr;](#/3/10 "解决方案")</small>
+
+### 孤行孤字处理
+孤字不成行，孤行不成页。
+		</script></section>
+
+		<section data-markdown><script type="text/template">
+### 段首缩进和段落间距
+
+常用处理方式：
+
+* 所有段落缩进（中文为 2em）；  
+```css
+p { text-indent: 2em; }
+```
+* 首段不缩进，其它缩进（中文为 2em）；  
+```css
+p + p { text-indent: 2em; }
+```
+* 所有段落不缩进，增加段落间距。  
+```css
+p { margin: 0 0 1em; }
+```
+		</script></section>
+	</section>
+
+	<section>
+		<section data-markdown><script type="text/template">
+# 中文排版前端最佳实践
+		</script></section>
+
+		<section data-markdown><script type="text/template">
+## <small>[&sect;](#/3/1 "固定链接")</small> 总则
+
+* 考虑到早期 Win 平台文字渲染不佳，正文文字应尽量采用黑体（Win 下小字号点阵宋体是个例外）；
+* 中文排版区域，应一律采用相对单位 **em** 控制版式；
+* 使用 **em**、**%** 等相对单位固定行高、段间距，且相对单位数值应受字号影响。
+		</script></section>
+
+		<section data-markdown><script type="text/template">
+## <small>[&sect;](#/3/2 "固定链接")</small> 字体设置 <small>[&hArr;](#/2/2 "概述")</small>
+		</script></section>
+
+		<section data-markdown><script type="text/template">
+### 字体渲染机制
+
+HTML
+```html
+<p>A quick brown fox <strong>jumps</strong> over the lazy dog.</p>
+```
+CSS
+```css
+p { font-family: helvetica, arial, sans-serif; }
+strong { font-weight: bold; }
+```
+		</script></section>
+
+		<section data-markdown><script type="text/template">
+### 中文字体声明
+
+* 优先写英文字体，优先写最好看的字体，优先用黑体，优先写私有字体，避免混合声明不同字体族字体。
+* 避免设置斜体 <del>`em { font-style: normal; }`</del>；
+* 避免使用全局的 `-webkit-font-smoothing`；
+* 正文区域采取 1.5~2 倍行高，标题需适当缩小但不 &lt;1；
+* 使用新细明体「PMingLiU」实现小于 12px 的汉字。  
+Link: [效果比较](images/cn10px.gif)
+
+```css
+/* font-family: 英文字体, 中文字体, 字体族 */
+body {
+	font: 14px/1.5 helvetica, arial, sans-serif;
+}
+body {
+	font: 14px/1.5 helvetica, arial, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+}
+
+```
+		</script></section>
+
+		<section>
+<h2><small><a href="#/3/5" title="固定链接">&sect;</a></small>尽量避免使用竖排<small><a href="#/2/8" title="概述">&hArr;</a></small></h2>
+<p>因竖排排版中英混排规范复杂、难以处理，所以应尽量避免此类排版方式。竖排排版可通过 <code>writing-mode</code> 实现。</p>
+<pre><code class="css" data-trim>
+.vertical { writing-mode: tb-rl; }
+</code></pre>
+<p>注：在 CSS Writing Modes Module Level 3 中 <code>writing-mode</code> 语法已改。</p>
+<pre><code class="css" data-trim>
+writing-mode: horizontal-tb || vertical-rl || vertical-lr
+</code></pre>
+		</section>
+
+		<section data-markdown><script type="text/template">
+## <small>[&sect;](#/3/6 "固定链接")</small> 行首行尾禁则与段落对齐 <small>[&hArr;](#/2/12 "概述")</small>
+* 采用 `text-align: justify;` 实现段落对齐；
+* 采用 `text-justify: inter-ideograph;` 解决 IE 下中英混排问题；
+* 部分 webkit 浏览器在处理中英混排时会出现超过 1em 的间隙，可采用 `word-break: break-all;` 解决，但会导致行首行尾禁则失效。
+
+```css
+p {
+	text-align: justify;
+	text-justify: inter-ideograph; /* IE 私有，解决中英混排 */
+	word-break: break-all; /* For webkit */
+}
+```
+		</script></section>
+
+		<section data-markdown><script type="text/template">
+![](images/justify.png)
+		</script></section>
+
+		<section data-markdown><script type="text/template">
+## <small>[&sect;](#/3/8 "固定链接")</small> 使用空格分隔中西文 <small>[&hArr;](#/2/13 "概述")</small>
+通过空格分割中西文，未来可通过 CSS Text Module Level 4 的 [text-spacing](http://dev.w3.org/csswg/css-text-4/#text-spacing-property) 解决。
+```css
+p { text-spacing: ideograph-alpha; }
+```
+
+> 小米手机 4 采用了高通骁龙 801 手机处理器，内含四个 Krait 400 2.5GHz 处理核心。运算速度提升 14%，性能更强大。它能出色地同时处理多个复杂任务。
+		</script></section>
+
+		<section data-markdown><script type="text/template">
+## <small>[&sect;](#/3/9 "固定链接")</small> 中文无需调整字间距
+
+不要使用 `letter-spacing` 调整内文字间距。
+
+![](images/letterspacing.png)
+		</script></section>
+
+		<section data-markdown><script type="text/template">
+## <small>[&sect;](#/3/10 "固定链接")</small> 通过段落间距表示分段 <small>[&hArr;](#/2/14 "概述")</small>
+* 段首缩进多用于印刷，网页排版多采用段落间距来避免文字过于密集的情况；
+* 段落间距不大于一行行高；
+* 避免只有一个段落时多余的间距问题。
+
+```css
+/* 避免使用 */
+p { text-indent: 2em; }
+p { margin: 0 0 1em; }
+
+/* 建议使用 */
+p + p { margin: 1em 0 0; }
+```
+		</script></section>
+
+		<section data-markdown><script type="text/template">
+## 后记 <small>(2016.06.21)</small>
+
+* 本篇内容原为团队内部分享时做的大纲，部分内容未在页面中拓展，故阅读体验不完整，有问题可[与我交流](https://github.com/sivan/ppt-2015-typo)；
+* 文中实践部分仅代表个人的理解和观点，并非「最佳」；
+* 部分配图来自中文排版规范或相应专家的文章，制作时仓促未记录和标明来源，见谅。
+		</script></section>
+
+	</section>
+
+	<section data-markdown><script type="text/template">
+## FIN
+
+<p class="serif">2015.04.23 by Sivan Sun</p>
+<p class="serif"><small><a href="http://lightcss.com/">Blog</a> / <a href="https://github.com/sivan">GitHub</a> / <a href="http://weibo.com/sivan">Weibo</a></small></p>
+![](images/fin.gif)
+	</script></section>
+	<!-- ~Here we die~  -->
+
+	</div>
+</div>
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+<script>
+Reveal.initialize({
+	controls: true,
+	progress: true,
+	history: true,
+	center: true,
+	slideNumber: true,
+	transition: 'fade', // none/fade/slide/convex/concave/zoom
+	dependencies: [
+		{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+		{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+		{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+		{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } }
+	]
+});
+</script>
+</body>
+</html>
