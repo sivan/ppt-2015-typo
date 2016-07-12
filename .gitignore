@@ -18,3 +18,12 @@ Thumbs.db
 # Files that might appear on external disks
 .Spotlight-V100
 .Trashes
+
+# Project
+css
+images
+js
+lib
+plugin
+Gruntfile.js
+package.json
